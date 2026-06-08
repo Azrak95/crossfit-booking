@@ -654,7 +654,7 @@ async function scheduleBooking(dayKey, classDate, openingDate) {
 
     const cronBody = {
       job: {
-        title: `CrossFit ${day.key} ${classDate.toLocaleDateString('es-ES')}`,
+        title: `CrossFit ${dayKey} ${classDate.toLocaleDateString('es-ES')}`,
         url: `https://api.github.com/repos/${cfg.githubUser}/crossfit-autobook/actions/workflows/reservar.yml/dispatches`,
         enabled: true,
         saveResponses: true,
