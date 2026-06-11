@@ -632,7 +632,8 @@ async function scheduleBooking(dayKey, classDate, openingDate) {
   const state = getState();
 
   // Actualizar estado a pending inmediatamente
-  const daysAhead = Math.round((classDate - new Date()) / (1000*60*60*24));
+  // days_ahead siempre es 5: el cron se ejecuta exactamente 5 días antes de la clase
+  const daysAhead = 5;
   state[dayKey] = {
     status: 'pending',
     classDate: classDate.toISOString(),
